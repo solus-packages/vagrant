@@ -1,0 +1,28 @@
+name       : vagrant
+version    : 1.8.6
+release    : 1
+source     :
+    - https://github.com/mitchellh/vagrant/archive/v1.8.6.tar.gz : de1204c56feeeb327f542e58d39c9dd55fef78a9b753594a3b30e330d72d23e4
+license    : MIT
+component  : programming.tools
+summary    : Build and distribute virtualized development environments
+description: Build and distribute virtualized development environments
+builddeps  :
+    - pkgconfig(ruby-2.2)
+rundeps    : 
+    - libarchive-bin
+    - ruby
+setup      : |
+    export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
+    gem build vagrant.gemspec
+build      : |
+    export GEM_PATH=$installdir/usr/lib64/ruby/gems/2.2.0
+    export GEM_HOME=$GEM_PATH
+    gem install vagrant-${version}.gem --no-ri --no-rdoc
+install : |
+    cp -r lib $installdir/usr/lib64/ruby/gems/2.2.0/gems/vagrant-${version}
+    ln -s /usr/lib64/ruby/gems/2.2.0/gems/vagrant-${version}/lib/vagrant $installdir/usr/lib64/vagrant
+    install -dm644 $installdir/usr/share/defaults/etc/profile.d
+    echo "export VAGRANT_INSTALLER_ENV=1" > $installdir/usr/share/defaults/etc/profile.d/vagrant.sh
+    install -Dm755 bin/vagrant $installdir/usr/bin/vagrant
+    install -Dm644 contrib/bash/completion.sh $installdir/usr/share/bash-completion/completions/vagrant        
