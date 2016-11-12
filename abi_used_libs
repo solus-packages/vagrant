@@ -1,8 +1,9 @@
 libc.so.6
 libdl.so.2
+libexslt.so.0
 libffi.so.6
-libm.so.6
 libpthread.so.0
 libruby.so.2.2
 libstdc++.so.6
-libz.so.1
+libxml2.so.2
+libxslt.so.1
