@@ -1,29 +1,31 @@
 name       : vagrant
-version    : 1.8.7
-release    : 2
+version    : 1.9.1
+release    : 3
 source     :
-    - https://github.com/mitchellh/vagrant/archive/v1.8.7.tar.gz : 5371d39679d40d4f6913728dd3d93c103e74c76ecc813710191a2c378b83a1e2
+    - https://github.com/mitchellh/vagrant/archive/v1.9.1.tar.gz : ed30e5a277b5614ee83d9417793ed2af870977368c2b0344855694040c4d6449
 homepage   : https://www.vagrantup.com/
 license    : MIT
 component  : programming.tools
 summary    : Build and distribute virtualized development environments
 description: |
-    Create and configure lightweight, reproducible, and portable development environments.    
+    Create and configure lightweight, reproducible, and portable development environments.
+networking : yes
 builddeps  :
+    - pkgconfig(libxslt)
     - pkgconfig(ruby-2.2)
-rundeps    : 
+rundeps    :
     - ruby-devel
     - libarchive-bin
 setup      : |
-    %patch -p1 < $pkgfiles/external_bundler.patch
+    %patch -p1 < $pkgfiles/disable-installer-warning.patch
     gem build vagrant.gemspec
 build      : |
     export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
     export GEM_PATH=$installdir/usr/lib64/ruby/gems/2.2.0
     export GEM_HOME=$GEM_PATH
     gem install vagrant-${version}.gem --no-ri --no-rdoc
-install : |
+install    : |
     cp -r lib $installdir/usr/lib64/ruby/gems/2.2.0/gems/vagrant-${version}
     ln -s /usr/lib64/ruby/gems/2.2.0/gems/vagrant-${version}/lib/vagrant $installdir/usr/lib64/vagrant
     install -Dm755 bin/vagrant $installdir/usr/bin/vagrant
-    install -Dm644 contrib/bash/completion.sh $installdir/usr/share/bash-completion/completions/vagrant        
+    install -Dm644 contrib/bash/completion.sh $installdir/usr/share/bash-completion/completions/vagrant

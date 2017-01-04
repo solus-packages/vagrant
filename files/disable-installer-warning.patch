@@ -1,0 +1,28 @@
+From c78d4bc441cd4225ba88ef0402bc1a6441e1b325 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=B6nke=20Behrendt?= <thesoenke@outlook.com>
+Date: Sun, 4 Dec 2016 15:01:15 +0100
+Subject: [PATCH 1/1] Disable installer warning
+
+---
+ bin/vagrant | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/bin/vagrant b/bin/vagrant
+index d515430..ad690d6 100755
+--- a/bin/vagrant
++++ b/bin/vagrant
+@@ -113,11 +113,6 @@ begin
+   logger.debug("Creating Vagrant environment")
+   env = Vagrant::Environment.new(opts)
+ 
+-  if !Vagrant.in_installer? && !Vagrant.very_quiet?
+-    # If we're not in the installer, warn.
+-    env.ui.warn(I18n.t("vagrant.general.not_in_installer") + "\n", prefix: false)
+-  end
+-
+   begin
+     # Execute the CLI interface, and exit with the proper error code
+     exit_status = env.cli(argv)
+-- 
+2.11.0
+
