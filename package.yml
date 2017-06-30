@@ -1,8 +1,8 @@
 name       : vagrant
-version    : 1.9.5
-release    : 6
+version    : 1.9.6
+release    : 7
 source     :
-    - https://github.com/mitchellh/vagrant/archive/v1.9.5.tar.gz : 69eb8ede3148b6f94389be5fd2d6cb2b6c79ba78cbcacdc354d2c73f12eccc2a
+    - https://github.com/mitchellh/vagrant/archive/v1.9.6.tar.gz : 08cde24b5def90e7674d333149ca9d9aec585bdb54ca41598e16ea91a56675bb
 homepage   : https://www.vagrantup.com/
 license    : MIT
 component  : programming.tools
