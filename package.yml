@@ -1,6 +1,6 @@
 name       : vagrant
 version    : 2.0.2
-release    : 11
+release    : 12
 source     :
     - https://github.com/hashicorp/vagrant/archive/v2.0.2.tar.gz : 394670c06f8c4201d8a351a63e070d5b0325feeb08a2965bd0051b2ffce34eea
 homepage   : https://www.vagrantup.com/
@@ -9,22 +9,30 @@ component  : programming.tools
 summary    : Build and distribute virtualized development environments
 description: |
     Create and configure lightweight, reproducible, and portable development environments.
-networking : yes
 builddeps  :
     - pkgconfig(ruby-2.3)
 rundeps    :
-    - ruby-devel
     - libarchive-bin
+    - ruby-childprocess
+    - ruby-devel
+    - ruby-erubis
+    - ruby-i18n
+    - ruby-listen
+    - ruby-hashicorp-checkpoint
+    - ruby-log4r
+    - ruby-net-ssh
+    - ruby-net-sftp
+    - ruby-net-scp
+    - ruby-rb-kqueue
+    - ruby-rest-client
+    - ruby-wdm
+    - ruby-winrm
+    - ruby-winrm-fs
+    - ruby-winrm-elevated
 setup      : |
     %patch -p1 < $pkgfiles/disable-installer-warning.patch
 build      : |
-    gem build vagrant.gemspec
+    %gem_build
 install    : |
-    export geminstalldir=$(ruby -e'puts Gem.default_dir')
-    export GEM_HOME=$installdir$geminstalldir
-    export GEM_PATH=$geminstalldir
-    gem install vagrant-${version}.gem --no-ri --no-rdoc
-    ln -s $GEM_PATH/vagrant-${version}/lib/vagrant $installdir/usr/lib64/vagrant
-    install -D -d -m 00755 $installdir/usr/bin
-    ln -s $GEM_PATH/bin/vagrant $installdir/usr/bin/vagrant
-    install -Dm644 contrib/bash/completion.sh $installdir/usr/share/bash-completion/completions/vagrant
+    %gem_install
+    install -Dm00644 contrib/bash/completion.sh $installdir/usr/share/bash-completion/completions/vagrant
