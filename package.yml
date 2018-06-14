@@ -1,8 +1,8 @@
 name       : vagrant
-version    : 2.0.2
-release    : 12
+version    : 2.1.1
+release    : 13
 source     :
-    - https://github.com/hashicorp/vagrant/archive/v2.0.2.tar.gz : 394670c06f8c4201d8a351a63e070d5b0325feeb08a2965bd0051b2ffce34eea
+    - https://github.com/hashicorp/vagrant/archive/v2.1.1.tar.gz : 8b54b39ad2bdfe038f5a6767a745f2139d6f62e6e4745008e906f2e1c658fa4d
 homepage   : https://www.vagrantup.com/
 license    : MIT
 component  : programming.tools
@@ -29,6 +29,8 @@ rundeps    :
     - ruby-winrm
     - ruby-winrm-fs
     - ruby-winrm-elevated
+    - ruby-win32-file
+    - ruby-win32-file-security
 setup      : |
     %patch -p1 < $pkgfiles/disable-installer-warning.patch
 build      : |
