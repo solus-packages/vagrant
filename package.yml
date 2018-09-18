@@ -1,6 +1,6 @@
 name       : vagrant
 version    : 2.1.5
-release    : 16
+release    : 17
 source     :
     - https://github.com/hashicorp/vagrant/archive/v2.1.5.tar.gz : 347179564f5a8a56e2d6dcb82470e04d92a60ed0b3265efc07f9ff37cd5c7f5f
 homepage   : https://www.vagrantup.com/
