@@ -1,8 +1,8 @@
 name       : vagrant
-version    : 2.2.0
-release    : 18
+version    : 2.2.2
+release    : 19
 source     :
-    - https://github.com/hashicorp/vagrant/archive/v2.2.0.tar.gz : cb1476683f0e8479334be20b26c49d516a0e1c739b9f6f35a8c05f68e4a048f1
+    - https://github.com/hashicorp/vagrant/archive/v2.2.2.tar.gz : 4f1233a753933025da8735df5c0c77762350094468df1692bb041e1991195e0b
 homepage   : https://www.vagrantup.com/
 license    : MIT
 component  : programming.tools
@@ -13,8 +13,10 @@ builddeps  :
     - pkgconfig(ruby-2.3)
 rundeps    :
     - libarchive-bin
+    - ruby-bcrypt_pbkdf
     - ruby-childprocess
     - ruby-devel
+    - ruby-ed25519
     - ruby-erubis
     - ruby-i18n
     - ruby-listen
