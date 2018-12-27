@@ -1,6 +1,6 @@
 name       : vagrant
 version    : 2.2.2
-release    : 19
+release    : 20
 source     :
     - https://github.com/hashicorp/vagrant/archive/v2.2.2.tar.gz : 4f1233a753933025da8735df5c0c77762350094468df1692bb041e1991195e0b
 homepage   : https://www.vagrantup.com/
@@ -10,7 +10,7 @@ summary    : Build and distribute virtualized development environments
 description: |
     Create and configure lightweight, reproducible, and portable development environments.
 builddeps  :
-    - pkgconfig(ruby-2.3)
+    - pkgconfig(ruby-2.6)
 rundeps    :
     - libarchive-bin
     - ruby-bcrypt_pbkdf
@@ -36,6 +36,7 @@ rundeps    :
     - ruby-win32-file-security
 setup      : |
     %patch -p1 < $pkgfiles/disable-installer-warning.patch
+    %patch -p1 < $pkgfiles/ruby-version.patch
 build      : |
     %gem_build
 install    : |
