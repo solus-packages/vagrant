@@ -1,8 +1,8 @@
 name       : vagrant
-version    : 2.2.2
-release    : 20
+version    : 2.2.3
+release    : 21
 source     :
-    - https://github.com/hashicorp/vagrant/archive/v2.2.2.tar.gz : 4f1233a753933025da8735df5c0c77762350094468df1692bb041e1991195e0b
+    - https://github.com/hashicorp/vagrant/archive/v2.2.3.tar.gz : 7a2f15b58549080562168f6bcab6d1461540b42ad35bf1f0d33f2c64317d00c8
 homepage   : https://www.vagrantup.com/
 license    : MIT
 component  : programming.tools
@@ -36,7 +36,6 @@ rundeps    :
     - ruby-win32-file-security
 setup      : |
     %patch -p1 < $pkgfiles/disable-installer-warning.patch
-    %patch -p1 < $pkgfiles/ruby-version.patch
 build      : |
     %gem_build
 install    : |
