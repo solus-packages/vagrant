@@ -1,8 +1,8 @@
 name       : vagrant
-version    : 2.2.3
-release    : 21
+version    : 2.2.4
+release    : 22
 source     :
-    - https://github.com/hashicorp/vagrant/archive/v2.2.3.tar.gz : 7a2f15b58549080562168f6bcab6d1461540b42ad35bf1f0d33f2c64317d00c8
+    - https://github.com/hashicorp/vagrant/archive/v2.2.4.tar.gz : 4f8ce6ede5d47a2be1ce46a29d22d41d1f4ba9d99fe9496b2424f98ae4dab2d6
 homepage   : https://www.vagrantup.com/
 license    : MIT
 component  : programming.tools
