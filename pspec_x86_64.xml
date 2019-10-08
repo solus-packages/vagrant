@@ -3,15 +3,15 @@
         <Name>vagrant</Name>
         <Homepage>https://www.vagrantup.com/</Homepage>
         <Packager>
-            <Name>Philipp Trulson</Name>
-            <Email>philipp@trulson.de</Email>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
         </Packager>
         <License>MIT</License>
         <PartOf>programming.tools</PartOf>
         <Summary xml:lang="en">Build and distribute virtualized development environments</Summary>
         <Description xml:lang="en">Create and configure lightweight, reproducible, and portable development environments.
 </Description>
-        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
     </Source>
     <Package>
         <Name>vagrant</Name>
@@ -998,12 +998,12 @@
         </Files>
     </Package>
     <History>
-        <Update release="22">
-            <Date>2019-02-27</Date>
+        <Update release="23">
+            <Date>2019-10-07</Date>
             <Version>2.2.4</Version>
             <Comment>Packaging update</Comment>
-            <Name>Philipp Trulson</Name>
-            <Email>philipp@trulson.de</Email>
+            <Name>F. von Gellhorn</Name>
+            <Email>flinux@vongellhorn.ch</Email>
         </Update>
     </History>
 </PISI>
