@@ -1,6 +1,6 @@
 name       : vagrant
 version    : 2.2.6
-release    : 24
+release    : 25
 source     :
     - https://github.com/hashicorp/vagrant/archive/v2.2.6.tar.gz : 1bdafbce594cb17b9b4a7d85ba3dc35093d6693b1717280e062ec64ca2c05a5b
 homepage   : https://www.vagrantup.com/
@@ -36,6 +36,7 @@ rundeps    :
     - ruby-win32-file-security
 setup      : |
     %patch -p1 < $pkgfiles/disable-installer-warning.patch
+    %patch -p1 < $pkgfiles/virtualbox-6.1.patch
 build      : |
     %gem_build
 install    : |

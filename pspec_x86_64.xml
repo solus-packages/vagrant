@@ -3,8 +3,8 @@
         <Name>vagrant</Name>
         <Homepage>https://www.vagrantup.com/</Homepage>
         <Packager>
-            <Name>Martin Reboredo</Name>
-            <Email>gc1000ll@gmail.com</Email>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
         </Packager>
         <License>MIT</License>
         <PartOf>programming.tools</PartOf>
@@ -812,6 +812,7 @@
             <Path fileType="library">/usr/lib64/ruby/gems/2.6.0/gems/vagrant-2.2.6/plugins/providers/virtualbox/driver/version_5_1.rb</Path>
             <Path fileType="library">/usr/lib64/ruby/gems/2.6.0/gems/vagrant-2.2.6/plugins/providers/virtualbox/driver/version_5_2.rb</Path>
             <Path fileType="library">/usr/lib64/ruby/gems/2.6.0/gems/vagrant-2.2.6/plugins/providers/virtualbox/driver/version_6_0.rb</Path>
+            <Path fileType="library">/usr/lib64/ruby/gems/2.6.0/gems/vagrant-2.2.6/plugins/providers/virtualbox/driver/version_6_1.rb</Path>
             <Path fileType="library">/usr/lib64/ruby/gems/2.6.0/gems/vagrant-2.2.6/plugins/providers/virtualbox/model/forwarded_port.rb</Path>
             <Path fileType="library">/usr/lib64/ruby/gems/2.6.0/gems/vagrant-2.2.6/plugins/providers/virtualbox/plugin.rb</Path>
             <Path fileType="library">/usr/lib64/ruby/gems/2.6.0/gems/vagrant-2.2.6/plugins/providers/virtualbox/provider.rb</Path>
@@ -1013,12 +1014,12 @@
         </Files>
     </Package>
     <History>
-        <Update release="24">
-            <Date>2019-12-06</Date>
+        <Update release="25">
+            <Date>2019-12-23</Date>
             <Version>2.2.6</Version>
             <Comment>Packaging update</Comment>
-            <Name>Martin Reboredo</Name>
-            <Email>gc1000ll@gmail.com</Email>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
         </Update>
     </History>
 </PISI>
