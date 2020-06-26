@@ -1,8 +1,8 @@
 name       : vagrant
-version    : 2.2.6
-release    : 25
+version    : 2.2.9
+release    : 26
 source     :
-    - https://github.com/hashicorp/vagrant/archive/v2.2.6.tar.gz : 1bdafbce594cb17b9b4a7d85ba3dc35093d6693b1717280e062ec64ca2c05a5b
+    - https://github.com/hashicorp/vagrant/archive/v2.2.9.tar.gz : b8e541a00285b0aa8e79aab0832c664f2c53ee4af40e382f1b5c452ae5647139
 homepage   : https://www.vagrantup.com/
 license    : MIT
 component  : programming.tools
@@ -10,7 +10,7 @@ summary    : Build and distribute virtualized development environments
 description: |
     Create and configure lightweight, reproducible, and portable development environments.
 builddeps  :
-    - pkgconfig(ruby-2.6)
+    - pkgconfig(ruby-2.7)
 rundeps    :
     - libarchive-bin
     - ruby-bcrypt_pbkdf
@@ -36,9 +36,11 @@ rundeps    :
     - ruby-win32-file-security
 setup      : |
     %patch -p1 < $pkgfiles/disable-installer-warning.patch
-    %patch -p1 < $pkgfiles/virtualbox-6.1.patch
+    %patch -p1 < $pkgfiles/ruby-2.7-fixes.patch
+    sed 's/s.required_ruby_version     = "~> 2.4", "< 2.7"//' -i vagrant.gemspec
 build      : |
     %gem_build
 install    : |
     %gem_install
     install -Dm00644 contrib/bash/completion.sh $installdir/usr/share/bash-completion/completions/vagrant
+    rm -rf $installdir/$geminstalldir/{build_info,doc,extensions}
